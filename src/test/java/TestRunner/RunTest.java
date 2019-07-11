@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 					,plugin = {"pretty", "html:target/cucumber"}
 					, tags ={"@appium"},
 		format={"pretty",
-				"html:target/cucumber-reports/cucumber-pretty",
-				"json:target/cucumber-reports/CucumberTestReport.json",
-				"rerun:target/cucumber-reports/re-run.txt"}
+				"html:target/cucumber/cucumber-pretty",
+				"json:target/cucumber/CucumberTestReport.json",
+				"rerun:target/cucumber/re-run.txt"}
 		)
 @Test
 public class RunTest extends AbstractTestNGCucumberTests {
