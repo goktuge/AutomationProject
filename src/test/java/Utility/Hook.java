@@ -18,15 +18,20 @@ import java.util.concurrent.TimeUnit;
 public class Hook {
 
 	private static WebDriver driver;
-	
+
+
+	// Mobile ve web platformlarý için before taglerinden birini kullanmak yeterli. (Mobile @appium, web @web)
+
+
 	@Before("@web")
 	public void setUp()
 	{
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");
 
+		// Güncel driver indirilmeli ya da WDM kullanýlmalý
 
-        WebDriverManager.firefoxdriver().setup();
-		driver= new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
@@ -38,9 +43,7 @@ public class Hook {
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
 		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1.0");
-//		cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/src/test/App/ApiDemos.apk");
 		cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/src/test/App/getir-testing-case-study.apk");
-//		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
