@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 					,glue={"StepDefinitions","Utility"}
 					,plugin = {"pretty", "html:target/cucumber"}
 					, tags ={"@appium"},
-		format={"pretty",
+		format={
 				"html:target/cucumber/cucumber-pretty",
 				"json:target/cucumber/CucumberTestReport.json",
 				"rerun:target/cucumber/re-run.txt"}
