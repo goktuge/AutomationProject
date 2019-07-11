@@ -3,7 +3,7 @@ Feature: Apk Test
   @appium
   Scenario: Product Testing
 
-    #Uygulamanýn ayaga kalktiginin kontrolu
+    #Uygulamanýn ayakta oldugunun kontrolu
     Given I check email id
 
     #Kullanici bilgileri girisi
@@ -27,6 +27,5 @@ Feature: Apk Test
     #Urunler silinir
     And Tap camsil_sil element
     And Tap krem_sil element
-
 
     And I check empty_textview id

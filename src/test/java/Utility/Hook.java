@@ -20,7 +20,7 @@ public class Hook {
 	private static WebDriver driver;
 
 
-	// Mobile ve web platformlarý için before taglerinden birini kullanmak yeterli. (Mobile @appium, web @web)
+	// Mobile ve web platformlarý için test runnerda before taglerinden birini kullanmak yeterli. (Mobile @appium, web @web)
 
 
 	@Before("@web")
@@ -28,7 +28,7 @@ public class Hook {
 	{
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/chromedriver.exe");
 
-		// Güncel driver indirilmeli ya da WDM kullanýlmalý
+		// Güncel driver indirilmeli ya da WDM kullanýlabilir.
 
         WebDriverManager.chromedriver().setup();
 		driver= new ChromeDriver();
